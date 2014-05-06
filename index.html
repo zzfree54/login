@@ -20,19 +20,11 @@ a:hover { text-decoration: none; color: #C00; background: #FC0; }
 <body onload="rescan_ssid()">
 <div id="page">
  <div id="header">
- <h1> JIADELONG WiFi Music Box </h1>
-  DLNA/AirPlay
+ <h1>JDL WiFi MUSIC BOX<br>佳得隆无线音乐盒</h1>
+  <h2> DLNA/AirPlay </h2>
  </div>
- <div id="body">
-  <h2>Enjoy your music</h2>
-  Select music on your phone.
-  <h2>Connect to your router</h2>
-  <p>
-   After you set up your box, you will be able to play music and surf the internet at the same time.
-  </p>
-  <p>
-   设置好音乐盒子之后，你就能一边使用音乐盒播音乐，一边上网冲浪了。
-  </p>
+ <div id="body" align="center">
+
   <p>
   <HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)" width="100%" color=#987cb9 SIZE=3>
 
@@ -40,28 +32,38 @@ a:hover { text-decoration: none; color: #C00; background: #FC0; }
 
 function check_parameter()
 {
-  document.write("<p> STA MODE </p>");
-  document.write("<p> JIADELONG MUSIC BOX </p>");
-  document.write("<p> 佳得隆音乐盒 </p>");
 
-  document.write("<p> hold the key on the music box to switch back to Ap mode. </p>");
-  document.write("<p> 按住音乐盒边上的键返回AP模式。 </p>");
-  
-  return flase;
+	window.open("sta.html");
+	return flase;
 }
 
   </script>
-   <form onsubmit="return check_parameter();" action="cgi-bin/router-info.cgi" >
-     <p>Connect To: 
+<table border="0">
+<tr>
+   <form onsubmit="return check_parameter();" action="cgi-bin/router-info.cgi">
+     <p><td align="right">Choose a Network(选择网络):</td>
+	<td>
 	<select type="text" id="Username" name="Username" size=1>
-	<option value="1" selected="selected"> SELECT HERE </option>
-	</select> 
-	<button type="button" onclick="rescan_ssid()">REFRESH</button>
+	<option value="1" selected="selected"> Select Here </option>
+	</select>
+	</td>
+
+	<td>
+	<button type="button" onclick="rescan_ssid()">
+	<img
+        src="refresh.png"
+        alt="refresh 刷新" height="20" width="20" border="0" />
+	</button>
+	</td>
+</tr>
+<tr>
+
      </p>
 	 
-     <p>Password: <input type="text" id="Password" name="Password" /></p>
+     <p><td align="right">Password(密码):</td> <td><input type="text" id="Password" name="Password" /></td></p>
 		  <input type="hidden" id="Security Mode" name="Security Mode" value="WPA/WPA2">
-
+	<td></td>
+</tr>
 <!--
      <p> Security Mode:
       <select id="Security Mode" name="Security Mode" size=1>
@@ -70,9 +72,12 @@ function check_parameter()
       <option value="WPA/WPA2" selected="selected">WPA/WPA2</option>
 	  </select> </p>
 -->
-
-     <input type="submit" value="Submit" />
+<td></td>
+<td>
+     <input type="submit" value="OK" />
+<td></td>
    </form>
+</table>
   <HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)" width="100%" color=#987cb9 SIZE=3>
   </p>
 
@@ -121,11 +126,6 @@ function rescan_ssid()
 
   </script>
 
-  <p>
-    <a href="http://validator.w3.org/check?uri=referer"><img
-        src="valid-xhtml10.png"
-        alt="Valid XHTML 1.0 Transitional" height="31" width="88" border="0" /></a>
-  </p>  
  </div>
 </div>
 <!-- s:853e9a42efca88ae0dd1a83aeb215047 -->
