@@ -112,15 +112,18 @@ function rescan_ssid()
 
 	ssid = responseText.split("\n");
 
-	document.getElementById("Username").innerHTML = "";
-	document.getElementById("Username").options.length = 0;
+	if (ssid.length != 0) {
+		document.getElementById("Username").innerHTML = "";
+		document.getElementById("Username").options.length = 0;
 
-	for (var i=0; i<ssid.length-1; i++){ 
-		var op=new Option();
-		op.text = ssid[i];
-		op.value= ssid[i]; 
-		document.getElementById("Username").options.add(op);
+		for (var i=0; i<ssid.length-1; i++){ 
+			var op=new Option();
+			op.text = ssid[i];
+			op.value= ssid[i]; 
+			document.getElementById("Username").options.add(op);
+		}
 	}
+
 	return true;
 }
 
