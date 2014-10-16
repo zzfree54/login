@@ -23,24 +23,15 @@ function rescan_ssid()
 {
 
 	var xmlhttp;
-	if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
+	if (window.XMLHttpRequest){
+		// code for IE7+, Firefox, Chrome, Opera, Safari
 		xmlhttp=new XMLHttpRequest();
 	}
-	else{// code for IE6, IE5
+	else{
+		// code for IE6, IE5
 		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
 	}
 
-/*
-	xmlhttp.onreadystatechange=function()
-	{
-		if (xmlhttp.readyState==4 && xmlhttp.status==200){
-			document.getElementById("allssids").innerHTML=xmlhttp.responseText;
-		}
-	}
- */
-
-//	xmlhttp.open("GET","wifi_scan_tab_html.info",false);
-//	xmlhttp.open("GET", "cgi-bin/iwlist.cgi", false);
 	xmlhttp.open("GET", "cgi-bin/iwlist.cgi?dummy="+new Date().getTime(), false);
 	xmlhttp.send(null);
 
@@ -70,7 +61,6 @@ function check_parameter()
 	window.open("sta.html");
 	return flase;
 }
-
 </script>
 
 <body onload="rescan_ssid()">
@@ -111,7 +101,7 @@ function check_parameter()
 		  <input type="hidden" id="Security Mode" name="Security Mode" value="WPA/WPA2">
 	<td></td>
 </tr>
-<!--
+<!-- uncommet this to enable Security Mode select.
      <p> Security Mode:
       <select id="Security Mode" name="Security Mode" size=1>
       <option value="No Encryption">No Encryption</option>
@@ -132,6 +122,5 @@ function check_parameter()
 
  </div>
 </div>
-<!-- s:853e9a42efca88ae0dd1a83aeb215047 -->
 </body>
 </html>
